@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+  echo "Usage: $0 <tex file> [other required files...]"
+  exit 1
+fi
+
+source ~/studentvars
+
+TEX_FILE=$1
+PDF_FILE=${TEX_FILE%.tex}.pdf
+
+for FILE in "$@"; do
+  scp $FILE "${UW_SERVER}:~/cs240/${FILE}"
+done
+
+ssh $UW_SERVER "cd ~/latex; pdflatex ${TEX_FILE}"
+
+scp "${UW_SERVER}:~/latex/${PDF_FILE}" ${PDF_FILE}

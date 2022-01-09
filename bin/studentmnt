@@ -1,0 +1,5 @@
+#!/bin/bash
+source ~/bin/studentvars
+mkdir -p ~/studentenv
+sshfs $UW_SERVER: ~/studentenv
+

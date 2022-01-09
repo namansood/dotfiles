@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+source ~/bin/studentvars
+ssh $UW_SERVER -t 'zsh'
+
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Running $@..."
+nohup $@ 2>&1 >/dev/null &

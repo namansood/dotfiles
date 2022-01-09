@@ -1,0 +1,3 @@
+#!/bin/sh
+source ~/bin/studentvars
+scp -r $UW_SERVER:$1 $2 
