@@ -5,6 +5,7 @@ set -euo pipefail
 DOTFILES=(
 	vimrc
 	zshrc
+	plan
 )
 
 echo "Setting up oh-my-zsh"
