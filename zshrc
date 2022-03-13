@@ -105,3 +105,8 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -r /home/nsood/.opam/opam-init/init.zsh ]] || source /home/nsood/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
+# fix for WSL not starting ssh-agent on boot
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent -s`
+    grep -slR PRIVATE ~/.ssh/ | xargs ssh-add
+fi
