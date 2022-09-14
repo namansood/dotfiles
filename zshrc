@@ -118,3 +118,7 @@ exp() {
 cdmk() {
 	mkdir -p "$@" && cd "$@"
 }
+
+if which gvim &>/dev/null && ! which vim echo &>/dev/null; then
+	alias vim='gvim -v'
+fi
