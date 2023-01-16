@@ -4,6 +4,7 @@ set -euo pipefail
 
 DOTFILES=(
 	vimrc
+	zprofile
 	zshrc
 	plan
 )

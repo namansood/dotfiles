@@ -1,3 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
 source ~/bin/studentvars
-scp $1 $UW_SERVER:$2 
+allargsexceptlast=${@:1:$(($#-1))}
+last=${!#}
+scp $allargsexceptlast $UW_SERVER:$last

@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/env bash
 source ~/bin/studentvars
 ssh $UW_SERVER -t 'zsh'
 

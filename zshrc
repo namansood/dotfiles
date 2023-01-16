@@ -1,7 +1,6 @@
 # PATH changes are in .zshenv
 alias sudo='sudo --preserve-env=PATH env '
 alias lntexheader='ln -s ~/coursenotes/nsdheader.sty $(pwd)'
-EDITOR=vim
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -105,12 +104,6 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -r /home/nsood/.opam/opam-init/init.zsh ]] || source /home/nsood/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-# fix for WSL not starting ssh-agent on boot
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent -s`
-    grep -slR PRIVATE ~/.ssh/ | xargs ssh-add
-fi
-
 exp() {
 	cd "$@" && ls
 }
@@ -119,6 +112,13 @@ cdmk() {
 	mkdir -p "$@" && cd "$@"
 }
 
-if which gvim &>/dev/null && ! which vim echo &>/dev/null; then
+if which gvim &>/dev/null && ! which vim &>/dev/null; then
 	alias vim='gvim -v'
+	export EDITOR='gvim -v'
+else
+	export EDITOR=vim
 fi
+
+alias ':q'=exit
+alias open=xdg-open
+alias neofetch=hyfetch

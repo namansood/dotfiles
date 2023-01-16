@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/usr/bin/env bash
 source ~/bin/studentvars
 scp -r $UW_SERVER:$1 $2 
