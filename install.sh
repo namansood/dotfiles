@@ -15,7 +15,7 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 
 echo "Downloading zsh theme"
 mkdir -p ~/.oh-my-zsh/custom/themes/
-wget -xqO ~/.oh-my-zsh/custom/themes/aphrodite.zsh-theme https://github.com/win0err/aphrodite-terminal-theme/raw/master/aphrodite.zsh-theme
+curl --create-dirs -Lo ~/.oh-my-zsh/custom/themes/aphrodite.zsh-theme https://github.com/win0err/aphrodite-terminal-theme/raw/master/aphrodite.zsh-theme
 
 for f in ${DOTFILES}
 do
