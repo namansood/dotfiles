@@ -7,6 +7,7 @@ fi
 # fix for firefox using xwayland instead of wayland native
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
+	export GDK_BACKEND=wayland
 fi
 
 export TENDS_TO=42
