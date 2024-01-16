@@ -9,6 +9,12 @@ DOTFILES=(
 	plan
 )
 
+CPP_PROGS=(
+	filteruntil
+)
+
+CXX="${CXX:-g++}"
+
 echo "Setting up oh-my-zsh"
 rm -rf ~/.oh-my-zsh
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
@@ -23,6 +29,12 @@ do
 	LINK="$HOME/.$f"
 	echo "Linking $LINK -> $TARGET"
 	ln -sf $TARGET $LINK
+done
+
+for f in ${CPP_PROGS}
+do
+	echo "Installing $f"
+	$CXX -std=c++23 -O3 "$(pwd)/src/$f.cpp" -o "$HOME/bin/$f"
 done
 
 mkdir -p ~/bin
