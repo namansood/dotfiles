@@ -31,13 +31,13 @@ do
 	ln -sf $TARGET $LINK
 done
 
+mkdir -p ~/bin
 for f in ${CPP_PROGS}
 do
 	echo "Installing $f"
 	$CXX -std=c++23 -O3 "$(pwd)/src/$f.cpp" -o "$HOME/bin/$f"
 done
 
-mkdir -p ~/bin
 for f in bin/*
 do
 	FILENAME=$(echo $f | awk -F'/' '{print $2}')
