@@ -1,5 +1,4 @@
 # PATH changes are in .zshenv
-alias sudo='sudo --preserve-env=PATH env '
 alias lntexheader='ln -s ~/coursenotes/nsdheader.sty $(pwd)'
 
 # Path to your oh-my-zsh installation.

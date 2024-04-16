@@ -10,4 +10,8 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 	export GDK_BACKEND=wayland
 fi
 
+# make AUR packages not compress, since they immediately get
+# decompressed anyway
+export PKGEXT=pkg.tar
+
 export TENDS_TO=42
