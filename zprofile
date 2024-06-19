@@ -12,6 +12,6 @@ fi
 
 # make AUR packages not compress, since they immediately get
 # decompressed anyway
-export PKGEXT=pkg.tar
+export PKGEXT=".pkg.tar"
 
 export TENDS_TO=42
