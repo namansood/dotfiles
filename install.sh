@@ -7,6 +7,7 @@ DOTFILES=(
 	zprofile
 	zshrc
 	plan
+	ssh/config
 )
 
 CPP_PROGS=(

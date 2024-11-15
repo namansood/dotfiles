@@ -1,0 +1,9 @@
+Host git.tends.to
+	User git
+	Port 7920
+
+Host silicon helium deuterium
+	User nsood
+
+Host argon
+	User tends
